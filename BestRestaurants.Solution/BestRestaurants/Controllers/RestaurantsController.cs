@@ -20,5 +20,18 @@ namespace BestRestaurants.Controllers
 			List<Restaurant> model = _db.Restaurants.ToList();
 			return View(model);
 		}
+
+		public ActionResult Create()
+		{
+			return View();
+		}
+
+		[HttpPost]
+		public ActionResult Create(Restaurant restaurant)
+		{
+			_db.Restaurants.Add(restaurant);
+			_db.SaveChanges();
+			return RedirectToAction("Index");
+		}
 	}
 }
