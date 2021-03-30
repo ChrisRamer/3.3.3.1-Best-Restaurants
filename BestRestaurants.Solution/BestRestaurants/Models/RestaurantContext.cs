@@ -4,8 +4,8 @@ namespace BestRestaurants.Models
 {
 	public class RestaurantContext : DbContext
 	{
-		public virtual DbSet<Restaurant> Categories { get; set; }
-		public virtual DbSet<Cuisine> Items { get; set; }
+		public virtual DbSet<Restaurant> Restaurants { get; set; }
+		public virtual DbSet<Cuisine> Cuisines { get; set; }
 
 		public RestaurantContext(DbContextOptions options) : base(options) { }
 
